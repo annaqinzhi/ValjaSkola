@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "18181040185",
+    "firebase_url": "https://valjaskola.firebaseio.com",
+    "project_id": "valjaskola",
+    "storage_bucket": "valjaskola.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18181040185:android:e460fcc1e7e8dda9",
+        "android_client_info": {
+          "package_name": "com.example.annaqin.valjaskola"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18181040185-edh43hntv1sc3h0ff7dddj4r6e414rfl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.annaqin.valjaskola",
+            "certificate_hash": "4d9449b5ff74e0ea48edc4a51cb2e4b0acb11dc7"
+          }
+        },
+        {
+          "client_id": "18181040185-1lekkdkg7qcub88c6epg9vueolhuc00h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6pYg4EJ-Jw0tRE9fIcJfP8YLu8PYKSUI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18181040185-1lekkdkg7qcub88c6epg9vueolhuc00h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

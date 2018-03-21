@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ValjaSkola</string>
+    <string name="google_maps_key">ValjaSkola</string>
+    <string name="Search">search</string>
+</resources>
