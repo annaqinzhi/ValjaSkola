@@ -8,8 +8,10 @@ import android.widget.ImageButton;
 
 public class HemActivity extends AppCompatActivity {
 
-    Intent intent;
+    Intent intent1;
+    Intent intent2;
     ImageButton grundskola;
+    ImageButton gymnasieskola;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +23,20 @@ public class HemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                intent= new Intent(HemActivity.this, MainActivity.class);
-                startActivity(intent);
+                intent1= new Intent(HemActivity.this, MainActivity.class);
+                startActivity(intent1);
+            }
+        });
+
+        gymnasieskola=(ImageButton)findViewById(R.id.gymnasieskola);
+        gymnasieskola.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                intent2= new Intent(HemActivity.this, SearchActivity.class);
+                startActivity(intent2);
             }
         });
 
     }
-    //test git function
 }

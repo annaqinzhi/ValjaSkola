@@ -2,4 +2,14 @@
     <string name="app_name">ValjaSkola</string>
     <string name="google_maps_key">ValjaSkola</string>
     <string name="Search">search</string>
+    <array name="spinnerlan">
+        <item>Stockholm län</item>
+        <item>Stockholm län</item>
+        <item>Stockholm län</item>
+    </array>
+    <array name="spinnerkummun">
+        <item>Sundbyberg</item>
+        <item>Stockholm</item>
+        <item>Täby</item>
+    </array>
 </resources>
