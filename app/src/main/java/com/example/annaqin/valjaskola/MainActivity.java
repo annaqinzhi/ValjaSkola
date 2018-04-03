@@ -18,7 +18,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 //import com.google.firebase.database.DatabaseReference;
 //import com.google.firebase.database.FirebaseDatabase;
 
-
+// test in github
 public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
 {
