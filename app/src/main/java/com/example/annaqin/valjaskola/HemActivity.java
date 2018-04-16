@@ -9,7 +9,6 @@ import android.widget.ImageButton;
 public class HemActivity extends AppCompatActivity {
 
     Intent intent1;
-    Intent intent2;
     ImageButton grundskola;
     ImageButton gymnasieskola;
 
@@ -28,15 +27,6 @@ public class HemActivity extends AppCompatActivity {
             }
         });
 
-        gymnasieskola=(ImageButton)findViewById(R.id.gymnasieskola);
-        gymnasieskola.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                intent2= new Intent(HemActivity.this, SearchActivity.class);
-                startActivity(intent2);
-            }
-        });
 
     }
 }

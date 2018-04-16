@@ -1,15 +1,28 @@
 <resources>
     <string name="app_name">ValjaSkola</string>
     <string name="google_maps_key">ValjaSkola</string>
-    <string name="Search">search</string>
-    <array name="spinnerlan">
-        <item>Stockholm län</item>
-        <item>Stockholm län</item>
-        <item>Stockholm län</item>
-    </array>
-    <array name="spinnerkummun">
-        <item>Sundbyberg</item>
+    <array name="spinner_kommun">
+        <item>Alla</item>
         <item>Stockholm</item>
+        <item>Sundbyberg</item>
         <item>Täby</item>
+        <item>Uppsala</item>
+        <item>Helsingborg</item>
     </array>
+
+    <array name="spinner_lan">
+        <item>Alla län</item>
+        <item>Stockholm län</item>
+        <item>Uppsala län</item>
+        <item>Skåne län</item>
+    </array>
+
+    <string name="textView_sorting">Sorting</string>
+    <string name="textView_toMap">Karta</string>
+    <string name="textView_toList">Lista</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
