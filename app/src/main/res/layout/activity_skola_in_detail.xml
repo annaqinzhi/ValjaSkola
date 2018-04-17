@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="292dp"
         android:text="textview"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="272dp"
         android:text="textview"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="176dp"
         android:text="Översikt"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginTop="224dp"
         android:text="Skolans name"
         android:textColor="@android:color/holo_green_dark"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="272dp"
         android:text="Andel (%) som uppn. kunskapskraven:"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="292dp"
         android:text="G.merivärde"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="248dp"
         android:text="textview"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,17 +90,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="248dp"
         android:text="Föräldrarnas genomsnittliga utb.nivå:"
         android:textSize="10sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.google.android.gms.maps.MapView
-        android:id="@+id/mapView3"
-        android:layout_width="384dp"
-        android:layout_height="160dp"
-        android:layout_marginTop="368dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Kontatinformation"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -121,7 +113,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="104dp"
         android:text="Huvudman:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -131,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="76dp"
         android:text="Telefon:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -141,7 +133,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="52dp"
         android:text="Adress:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -150,8 +142,8 @@
         android:id="@+id/textView_SkolaType"
         android:layout_width="266dp"
         android:layout_height="18dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="104dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -160,8 +152,8 @@
         android:id="@+id/textView_SkolaTel"
         android:layout_width="304dp"
         android:layout_height="19dp"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="76dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -170,8 +162,8 @@
         android:id="@+id/textView_SkolaAdress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="52dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -180,12 +172,25 @@
         android:id="@+id/button_hemsida"
         android:layout_width="163dp"
         android:layout_height="35dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="132dp"
         android:text="Till skolans hemsida"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/itemsMap"
+        android:layout_width="357dp"
+        android:layout_height="191dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>
 

@@ -2,9 +2,14 @@ package com.example.annaqin.valjaskola;
 
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
@@ -23,7 +28,9 @@ import android.widget.Toast;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -41,7 +48,7 @@ import java.util.TreeSet;
 
 import static android.content.ContentValues.TAG;
 
-public class MainActivity extends FragmentActivity implements OnMapReadyCallback, ListAdapter.OnItemClickListener {
+public class MainActivity extends FragmentActivity implements ListAdapter.OnItemClickListener {
     public static final String Extra_Name="SkolaName";
     public static final String Extra_Type="SkolaType";
     public static final String Extra_Gmeriv="SkolaGmeriv";
@@ -49,6 +56,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     public static final String Extra_Tel="SkolaTel";
     public static final String Extra_Utbil="SkolaUtbil";
     public static final String Extra_Uppn="SkolaUppn";
+    public static final String Extra_Lat="SkolaLat";
+    public static final String Extra_Lng="SkolaLng";
     Intent intent;
 
 
@@ -64,21 +73,21 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
     private TextView textViewSorting;
     private ArrayAdapter<String> komAdapter;
     private TextView textViewToMap;
+    private FragmentManager manager;
     private GoogleMap mMap;
-    private Map map;
+    private LocationManager locationManager;
 
     private List<Skola>listskolor;
     private ArrayList<String> listKom;
 
     private boolean ascending = true;
-    private boolean toMap=true;
-    private MapFragment mMapFragment;
-
+    private boolean toMap = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        manager = getFragmentManager();
         intent = getIntent();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.mRecyclerView);
@@ -93,20 +102,12 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mRecyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL));
 
-        mMapFragment = MapFragment.newInstance();
-        FragmentTransaction fragmentTransaction =
-                getFragmentManager().beginTransaction();
-        fragmentTransaction.remove(mMapFragment);
-        fragmentTransaction.commit();
-        mMapFragment.getMapAsync(this);
-
         spinnerLan = (Spinner) findViewById(R.id.spinner_lan);
         spinnerKom = (Spinner) findViewById(R.id.spinner_kommun);
 
         listskolor =new ArrayList<Skola>();
         listKom = new ArrayList<String>();
         listKom.add("Alla kommun");
-
 
 
         // if choose län:
@@ -132,9 +133,8 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         textViewToMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showMapOrList(toMap);
+                addMapFragment(toMap);
                 toMap=!toMap;
-
             }
         });
 
@@ -157,6 +157,11 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
 
                 onClickSpinnerLanGetData();
 
+                if(!toMap){
+                    removeMap();
+                    getMap();
+                }
+
             }
 
             @Override
@@ -178,6 +183,11 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 Toast.makeText(MainActivity.this, seletedItem2, Toast.LENGTH_SHORT).show();
 
                 onClickSpinnerKomGetData();
+
+                if(!toMap){
+                    removeMap();
+                    getMap();
+                }
 
             }
 
@@ -222,12 +232,12 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
                 Set<String> uniqueKom = new TreeSet<String>(listKom);
                 listKom = new ArrayList<>(uniqueKom);
                 for (String str : listKom) {
-                    Log.d(TAG, "onClickSpinnerLanGetData: AAAAAAAAAAAAspinnerKom item :"+ str);
+                    Log.d(TAG, "onClickSpinnerLanGetData: AAAAAAAAAAAAspinnerKom item :" + str);
                 }
-                listKom.add(0,"Alla kommun");
-                Log.d(TAG, "onClickSpinnerLanGetData: AAAAAAAAAAAAspinnerKom size: "+listKom.size());
+                listKom.add(0, "Alla kommun");
+                Log.d(TAG, "onClickSpinnerLanGetData: AAAAAAAAAAAAspinnerKom size: " + listKom.size());
 
-                komAdapter =new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item,listKom);
+                komAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listKom);
                 komAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 spinnerKom.setAdapter(komAdapter);
 
@@ -324,84 +334,95 @@ public class MainActivity extends FragmentActivity implements OnMapReadyCallback
         detailintent.putExtra(Extra_Tel,clickedSkola.getTel());
         detailintent.putExtra(Extra_Utbil,clickedSkola.getUtbil());
         detailintent.putExtra(Extra_Uppn,clickedSkola.getUppn());
+        detailintent.putExtra(Extra_Lat,Double.toString(clickedSkola.getLatitude()));
+        detailintent.putExtra(Extra_Lng,Double.toString(clickedSkola.getLongitude()));
 
         startActivity(detailintent);
 
     }
 
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        mMap.getUiSettings().isMapToolbarEnabled();
-        mMap.getUiSettings().setZoomControlsEnabled(true);
+    public void addMapFragment(boolean toMap){
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference skolor = database.getReference("skolor");
-        skolor.addValueEventListener(new ValueEventListener() {
+        if(toMap){
+            getMap();
+            textViewToMap.setText(R.string.textView_toList);
+       } else {
+            removeMap();
+            textViewToMap.setText(R.string.textView_toMap);
+           }
+    }
+
+    public void getMap(){
+
+        MapFragment mapFragment = new MapFragment();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.container, mapFragment, "mapFragment");
+        transaction.commit();
+
+        mapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onMapReady(GoogleMap googleMap) {
+                mMap = googleMap;
+                mMap.getUiSettings().isMapToolbarEnabled();
+                mMap.getUiSettings().setZoomControlsEnabled(true);
 
-                if (dataSnapshot!=null){
-
-                    for (DataSnapshot childSnapshot:dataSnapshot.getChildren()){
-                        List<Skola>skolorList=new ArrayList<>();
-
-                        Skola skola=childSnapshot.getValue(Skola.class);
-                        skolorList.add(skola);
-                        double lat=skola.getLatitude();
-                        double lng=skola.getLongitude();
-                        LatLng skolaLatlng = new LatLng(lat, lng);
-                        mMap.addMarker(new MarkerOptions().position(skolaLatlng).title(skola.getName()));
-                        mMap.moveCamera(CameraUpdateFactory.newLatLng(skolaLatlng));
-
-                    }
-
+                // For showing a move to my location button
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    mMap.setMyLocationEnabled(true);
                 } else {
-                    Toast.makeText(MainActivity.this, "This is no data in firebase!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Request permission.", Toast.LENGTH_SHORT).show();
                 }
+
+                // For dropping markers at the points on the Map
+                for (Skola skola : listskolor) {
+                    LatLng sLocation = new LatLng(skola.getLatitude(), skola.getLongitude());
+                    mMap.addMarker(new MarkerOptions().position(sLocation).title(skola.getName()).snippet(skola.getAdress()));
+
+                }
+
+                // For zooming automatically to the location of the marker
+                locationManager=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
+                getMyLocation();
+
             }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.w(TAG, "Failed to read value.", databaseError.toException());
-            }
         });
 
+    }
 
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+    public void removeMap(){
+
+        MapFragment mapFragment =  (MapFragment) manager.findFragmentByTag("mapFragment");
+
+        if (mapFragment != null) {
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.remove(mapFragment);
+            transaction.commit();
+        } else {
+            Toast.makeText(getApplicationContext(), "MapFragment not found", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void getMyLocation(){
+
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
-            mMap.setMyLocationEnabled(true);
-        } else {
-            Toast.makeText(this, "Request permission.", Toast.LENGTH_SHORT).show();
-        }
 
+            Location myLocation=locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            LatLng mLocation = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+            CameraPosition cameraPosition = new CameraPosition.Builder().target(mLocation).zoom(10).build();
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+        } else {
+            Toast.makeText(getApplicationContext(), "Request permission.", Toast.LENGTH_SHORT).show();
+        }
     }
 
-    public void showMapOrList(boolean toMap){
-        if(toMap){
-            FragmentTransaction fragmentTransaction =
-                    getFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.map, mMapFragment);
-            fragmentTransaction.commit();
-
-            textViewToMap.setText(R.string.textView_toList);
-        } else {
-            FragmentTransaction fragmentTransaction =
-                    getFragmentManager().beginTransaction();
-            fragmentTransaction.remove(mMapFragment);
-            fragmentTransaction.commit();
-
-            textViewToMap.setText(R.string.textView_toMap);
-
-
-        }
-
-
-
-
-
-    }
 
 }
+
+
 
 
 
