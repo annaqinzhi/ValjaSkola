@@ -5,19 +5,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class HemActivity extends AppCompatActivity {
 
     Intent intent1;
-    ImageButton grundskola;
-    ImageButton gymnasieskola;
+    TextView grundskola;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hem);
 
-        grundskola=(ImageButton)findViewById(R.id.grundskola);
+        grundskola=(TextView)findViewById(R.id.grundskola);
         grundskola.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

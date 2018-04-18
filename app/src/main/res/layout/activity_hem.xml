@@ -4,50 +4,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f1f5e6"
     tools:context="com.example.annaqin.valjaskola.HemActivity">
 
-    <ImageView
-        android:id="@+id/welcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="64dp"
-        android:contentDescription="welcome"
+    <TextView
+        android:id="@+id/gymnasieskola"
+        android:layout_width="188dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="444dp"
+        android:background="@drawable/layout_roundcorner"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:shadowColor="@android:color/darker_gray"
+        android:text="@string/gymnasieskola"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorLink="#4db268"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valjaskola"
-        app:srcCompat="@drawable/welcome" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/valjaskola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="84dp"
         android:contentDescription="logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/valjaskola" />
 
-    <ImageButton
+    <TextView
         android:id="@+id/grundskola"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="grundskola"
+        android:layout_width="188dp"
+        android:layout_height="35dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="384dp"
+        android:background="@drawable/layout_roundcorner"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:shadowColor="@android:color/darker_gray"
+        android:text="@string/grundskola"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorLink="#4db268"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcome"
-        app:srcCompat="@drawable/grundskola" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/gymnasieskola"
-        android:layout_width="209dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="gymnasieskola"
+    <TextView
+        android:id="@+id/welcome-head"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="192dp"
+        android:gravity="center"
+        android:text="@string/welcomehead"
+        android:textColor="#4db268"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grundskola"
-        app:srcCompat="@drawable/gymnasiet" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="268dp"
+        android:layout_height="95dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="252dp"
+        android:fontFamily="sans-serif"
+        android:lineSpacingExtra="4sp"
+        android:text="@string/welcome"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    />
+
 
 </android.support.constraint.ConstraintLayout>

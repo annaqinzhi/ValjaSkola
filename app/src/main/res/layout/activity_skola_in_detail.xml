@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f1f5e6">
 
     <TextView
         android:id="@+id/textView_SkolaGmeriv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="304dp"
+        android:fontFamily="sans-serif"
         android:text="textview"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,19 +24,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="272dp"
+        android:layout_marginTop="296dp"
+        android:fontFamily="sans-serif"
         android:text="textview"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_head3"
+        android:id="@+id/textView_overview"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="176dp"
-        android:text="Översikt"
+        android:layout_marginTop="196dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_overview"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,30 +49,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginTop="240dp"
+        android:fontFamily="sans-serif"
         android:text="Skolans name"
-        android:textColor="@android:color/holo_green_dark"
+        android:textColor="#4db268"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textView_uppnhead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="272dp"
-        android:text="Andel (%) som uppn. kunskapskraven:"
+        android:layout_marginTop="296dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_uppnhead"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView16"
+        android:id="@+id/textView_gmerihead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="292dp"
-        android:text="G.merivärde"
+        android:layout_marginTop="312dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_gmerihead"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -79,19 +87,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="204dp"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="276dp"
+        android:fontFamily="sans-serif"
         android:text="textview"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/textView_utbilhead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="248dp"
-        android:text="Föräldrarnas genomsnittliga utb.nivå:"
+        android:layout_marginTop="276dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_utbilhead"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -101,8 +111,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:text="Kontatinformation"
+        android:layout_marginTop="24dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_head"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,8 +124,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="104dp"
-        android:text="Huvudman:"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_typhead"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,8 +135,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
-        android:text="Telefon:"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_telhead"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -133,8 +146,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        android:text="Adress:"
+        android:layout_marginTop="76dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/textView_adresshead"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -142,8 +156,9 @@
         android:id="@+id/textView_SkolaType"
         android:layout_width="266dp"
         android:layout_height="18dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -152,8 +167,9 @@
         android:id="@+id/textView_SkolaTel"
         android:layout_width="304dp"
         android:layout_height="19dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="100dp"
+        android:fontFamily="sans-serif"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -162,27 +178,29 @@
         android:id="@+id/textView_SkolaAdress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="sans-serif"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button_hemsida"
-        android:layout_width="163dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="132dp"
-        android:text="Till skolans hemsida"
+        android:layout_width="174dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="148dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/button_hemsida"
         android:textAppearance="@style/TextAppearance.AppCompat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
         android:id="@+id/itemsMap"
-        android:layout_width="357dp"
-        android:layout_height="191dp"
+        android:layout_width="356dp"
+        android:layout_height="226dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"

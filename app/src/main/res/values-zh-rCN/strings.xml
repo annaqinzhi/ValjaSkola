@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">瑞典择校</string>
+    <string name="google_maps_key">瑞典择校</string>
+    <string name="grundskola">小学及初中</string>
+    <string name="gymnasieskola">高中</string>
+    <string name="welcomehead">欢迎使用瑞典择校</string>
+    <string name="welcome">
+        这里呈现了瑞典教育部对学校教学质量和成绩的各种评估方法。在这里你可以搜索和比较学校。该App的目的是为学生和家长提供学校选择支持。
+    </string>
+
+    <string name="spinner_kommunAlla">所有区</string>
+    <string name="spinner_lanAlla">所有城市</string>
+
+    <array name="spinner_kom">
+        <item>所有区</item>
+    </array>
+
+    <array name="spinner_lan">
+        <item>所有城市</item>
+        <item>Stockholm län</item>
+        <item>Uppsala län</item>
+        <item>Skåne län</item>
+    </array>
+
+    <string name="visa">显示</string>
+    <string name="traffar">查询结果</string>
+    <string name="textView_sorting">排序</string>
+    <string name="textView_toMap">地图</string>
+    <string name="textView_toList">列表</string>
+    <string name="textView_head">联系方式</string>
+    <string name="textView_adresshead">地址:</string>
+    <string name="textView_telhead">电话:</string>
+    <string name="textView_typhead">领导机构:</string>
+    <string name="button_hemsida">链接到学校网址</string>
+    <string name="textView_overview">概览</string>
+    <string name="textView_utbilhead">家长平均教育水平:</string>
+    <string name="textView_uppnhead">达到各科要求的百分比（％）：</string>
+    <string name="textView_gmerihead">平均成绩</string>
+</resources>

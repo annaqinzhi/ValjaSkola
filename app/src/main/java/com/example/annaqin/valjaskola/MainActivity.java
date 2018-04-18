@@ -107,7 +107,7 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
 
         listskolor =new ArrayList<Skola>();
         listKom = new ArrayList<String>();
-        listKom.add("Alla kommun");
+        //listKom.add(getString(R.string.spinner_kommunAlla));
 
 
         // if choose län:
@@ -222,7 +222,7 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
                         listskolor.add(skola);
                         listKom.add(komInDBS);
                         count++;
-                    } else if (seletedItem1.contains("Alla län")){
+                    } else if (seletedItem1.contains(getString(R.string.spinner_lanAlla))){
                         listskolor.add(skola);
                         listKom.add(komInDBS);
                         count++;
@@ -232,10 +232,10 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
                 Set<String> uniqueKom = new TreeSet<String>(listKom);
                 listKom = new ArrayList<>(uniqueKom);
                 for (String str : listKom) {
-                    Log.d(TAG, "onClickSpinnerLanGetData: AAAAAAAAAAAAspinnerKom item :" + str);
+                    Log.d(TAG, "onClickSpinnerLanGetData: spinnerKom item :" + str);
                 }
-                listKom.add(0, "Alla kommun");
-                Log.d(TAG, "onClickSpinnerLanGetData: AAAAAAAAAAAAspinnerKom size: " + listKom.size());
+                listKom.add(0, getString(R.string.spinner_kommunAlla));
+                Log.d(TAG, "onClickSpinnerLanGetData: spinnerKom size: " + listKom.size());
 
                 komAdapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, listKom);
                 komAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -270,10 +270,10 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
                     String komInDBS=(String) skolaSnapshot.child("kummun").getValue();
                     String lanInDBS=(String) skolaSnapshot.child("lan").getValue();
 
-                    if(seletedItem1.contains("Alla län")&& seletedItem2.contains("Alla kommun")){
+                    if(seletedItem1.contains(getString(R.string.spinner_lanAlla))&& seletedItem2.contains(getString(R.string.spinner_kommunAlla))){
                         listskolor.add(skola);
                         count++;
-                    } else if (lanInDBS.contains(seletedItem1)&& seletedItem2.contains("Alla kommun")){
+                    } else if (lanInDBS.contains(seletedItem1)&& seletedItem2.contains(getString(R.string.spinner_kommunAlla))){
                         listskolor.add(skola);
                         count++;
                     } else if (komInDBS.contains(seletedItem2)){
@@ -302,7 +302,7 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
         listAdapter.setOnItemClickListener(MainActivity.this);
 
         textViewVisa=(TextView)findViewById(R.id.textView_visa);
-        textViewVisa.setText(count+" träffar");
+        textViewVisa.setText(count+getString(R.string.traffar));
 
 
     }
