@@ -3,10 +3,10 @@
     <string name="app_name">ChooseSchool</string>
     <string name="google_maps_key">ChooseSchool</string>
     <string name="grundskola">Elementary school</string>
-    <string name="gymnasieskola">Upper secondary school</string>
+    <string name="gymnasieskola">High school</string>
     <string name="welcomehead">Welcome to Choose school</string>
     <string name="welcome">
-        At Choosing School, various measures from Skolverket for schools quality and results are presented. Here you can search for and compare schools. The purpose of the App is to provide pupils and parents with support for school selection.
+        At Choose School, various measures for schools quality and results are presented. Here you can search for and compare schools. The purpose of the App is to provide pupils and parents with support for school selection.
     </string>
 
     <string name="spinner_kommunAlla">All municipalities</string>
@@ -32,8 +32,8 @@
     <string name="textView_adresshead">Adress:</string>
     <string name="textView_telhead">Telefone:</string>
     <string name="textView_typhead">Type:</string>
-    <string name="button_hemsida">To schools homepage</string>
-    <string name="textView_overview">Overview:</string>
+    <string name="textView_hemsida">To schools homepage</string>
+    <string name="textView_overview">Overview</string>
     <string name="textView_utbilhead">Parents average education level:</string>
     <string name="textView_uppnhead">Percentage (%) that meets the knowledge requirements:</string>
     <string name="textView_gmerihead">Average merit value:</string>

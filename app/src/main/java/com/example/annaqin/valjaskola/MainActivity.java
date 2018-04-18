@@ -302,7 +302,7 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
         listAdapter.setOnItemClickListener(MainActivity.this);
 
         textViewVisa=(TextView)findViewById(R.id.textView_visa);
-        textViewVisa.setText(count+getString(R.string.traffar));
+        textViewVisa.setText(count+" "+getString(R.string.traffar));
 
 
     }

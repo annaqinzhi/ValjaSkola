@@ -11,8 +11,8 @@
         android:id="@+id/textView_SkolaGmeriv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="304dp"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="294dp"
         android:fontFamily="sans-serif"
         android:text="textview"
         android:textSize="10sp"
@@ -23,8 +23,8 @@
         android:id="@+id/textView_Uppn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginStart="284dp"
+        android:layout_marginTop="312dp"
         android:fontFamily="sans-serif"
         android:text="textview"
         android:textSize="10sp"
@@ -63,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="294dp"
         android:fontFamily="sans-serif"
         android:text="@string/textView_uppnhead"
         android:textSize="10sp"
@@ -86,7 +86,7 @@
         android:id="@+id/textView_Utbildning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
+        android:layout_marginStart="284dp"
         android:layout_marginTop="276dp"
         android:fontFamily="sans-serif"
         android:text="textview"
@@ -97,7 +97,7 @@
     <TextView
         android:id="@+id/textView_utbilhead"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="13dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="276dp"
         android:fontFamily="sans-serif"
@@ -185,27 +185,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_hemsida"
-        android:layout_width="174dp"
+    <TextView
+        android:id="@+id/gymnasieskola"
+        android:layout_width="191dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="148dp"
+        android:background="@drawable/layout_roundcorner"
         android:fontFamily="sans-serif"
-        android:text="@string/button_hemsida"
-        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:gravity="center"
+        android:shadowColor="@android:color/darker_gray"
+        android:text="@string/textView_hemsida"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textColorLink="#4db268"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <FrameLayout
         android:id="@+id/itemsMap"
         android:layout_width="356dp"
         android:layout_height="226dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
     </FrameLayout>

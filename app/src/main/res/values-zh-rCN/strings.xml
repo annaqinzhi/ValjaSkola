@@ -32,7 +32,7 @@
     <string name="textView_adresshead">地址:</string>
     <string name="textView_telhead">电话:</string>
     <string name="textView_typhead">领导机构:</string>
-    <string name="button_hemsida">链接到学校网址</string>
+    <string name="textView_hemsida">链接到学校网址</string>
     <string name="textView_overview">概览</string>
     <string name="textView_utbilhead">家长平均教育水平:</string>
     <string name="textView_uppnhead">达到各科要求的百分比（％）：</string>

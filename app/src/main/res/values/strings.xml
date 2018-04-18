@@ -29,7 +29,7 @@
     <string name="textView_adresshead">Adress:</string>
     <string name="textView_telhead">Telefon:</string>
     <string name="textView_typhead">Huvudman:</string>
-    <string name="button_hemsida">Till skolans hemsida</string>
+    <string name="textView_hemsida">Till skolans hemsida</string>
     <string name="textView_overview">Översikt</string>
     <string name="textView_utbilhead">Föräldrarnas genomsnittliga utb.nivå:</string>
     <string name="textView_uppnhead">Andel (%) som uppn. kunskapskraven:</string>
