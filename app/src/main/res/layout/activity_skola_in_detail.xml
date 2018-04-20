@@ -15,6 +15,7 @@
         android:layout_marginTop="294dp"
         android:fontFamily="sans-serif"
         android:text="textview"
+        android:textAlignment="textEnd"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,6 +28,7 @@
         android:layout_marginTop="312dp"
         android:fontFamily="sans-serif"
         android:text="textview"
+        android:textAlignment="textEnd"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -90,6 +92,7 @@
         android:layout_marginTop="276dp"
         android:fontFamily="sans-serif"
         android:text="textview"
+        android:textAlignment="textEnd"
         android:textSize="10sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -186,7 +189,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/gymnasieskola"
+        android:id="@+id/textView_hemsida"
         android:layout_width="191dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="88dp"

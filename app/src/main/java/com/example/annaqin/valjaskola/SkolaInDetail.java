@@ -63,8 +63,15 @@ public class SkolaInDetail extends AppCompatActivity {
         TextView textViewUtbil=(TextView)findViewById(R.id.textView_Utbildning);
         TextView textViewUppn=(TextView)findViewById(R.id.textView_Uppn);
 
+        if (type.equals("Kommunal")){
+            textViewType.setText(R.string.Kommunal);
+        } else if(type.equals("Enskild") ){
+            textViewType.setText(R.string.Enskild);
+        } else {
+            textViewType.setText("...");
+        }
+
         textViewName.setText(name);
-        textViewType.setText(type);
         textViewGmeriv.setText(gmeriv);
         textViewAdress.setText(adress);
         textViewTel.setText(tel);

@@ -35,6 +35,9 @@
     <string name="textView_hemsida">链接到学校网址</string>
     <string name="textView_overview">概览</string>
     <string name="textView_utbilhead">家长平均教育水平:</string>
-    <string name="textView_uppnhead">达到各科要求的百分比（％）：</string>
+    <string name="textView_uppnhead">达到所有学科要求的百分比（％）：</string>
     <string name="textView_gmerihead">平均成绩</string>
+    <string name="Kommunal">区管辖</string>
+    <string name="Enskild">私立</string>
+
 </resources>

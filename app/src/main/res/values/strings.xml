@@ -34,6 +34,8 @@
     <string name="textView_utbilhead">Föräldrarnas genomsnittliga utb.nivå:</string>
     <string name="textView_uppnhead">Andel (%) som uppn. kunskapskraven:</string>
     <string name="textView_gmerihead">G.merivärde:</string>
+    <string name="Kommunal">Kommunal</string>
+    <string name="Enskild">Enskild</string>
 
 
 </resources>
