@@ -10,6 +10,20 @@
     android:scrollbars="vertical">
 
     <TextView
+        android:id="@+id/textView_komhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView_SkolaName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:text="@string/Kommun"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/textView_SkolaName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +31,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="22dp"
         android:layout_marginTop="24dp"
-        android:gravity="center"
+        android:gravity="start"
         android:text="TextView"
         android:textColor="@android:color/white"
         android:textSize="18sp"
@@ -31,10 +45,23 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/textView_SkolaName"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="68dp"
-        android:gravity="start"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_typehead"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textView_kom"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/textView_tyhead"
         android:textAlignment="viewStart"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,10 +73,23 @@
         android:layout_height="19dp"
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/textView_kom"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="68dp"
-        android:gravity="start"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_gmerivhead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView_kom"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/textView_gmhead"
         android:textAlignment="viewStart"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,12 +101,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/textView_kom"
         android:layout_alignParentEnd="true"
-        android:layout_marginEnd="76dp"
-        android:layout_marginTop="68dp"
-        android:gravity="left"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
         android:text="TextView"
         android:textColor="@android:color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 

@@ -41,8 +41,15 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>  {
         Skola skola=skolaList.get(position);
         holder.textViewName.setText(skola.getName());
         holder.textViewKummun.setText(skola.getKummun());
-        holder.textViewType.setText((skola.getType()));
         holder.textViewGmeriv.setText(Double.toString(skola.getGmeriv()));
+
+        if (skola.getType().equals("Kommunal")){
+            holder.textViewType.setText(R.string.Kommunal);
+        } else if (skola.getType().equals("Enskild")){
+            holder.textViewType.setText(R.string.Enskild);
+        } else {
+            holder.textViewType.setText("...");
+        }
 
 
     }

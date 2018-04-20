@@ -22,7 +22,7 @@
 
     <string name="visa">Visa</string>
     <string name="traffar">träffar</string>
-    <string name="textView_sorting">Sorting</string>
+    <string name="textView_sorting">Sortera efter G.M</string>
     <string name="textView_toMap">Karta</string>
     <string name="textView_toList">Lista</string>
     <string name="textView_head">Kontatinformation</string>
@@ -33,9 +33,12 @@
     <string name="textView_overview">Översikt</string>
     <string name="textView_utbilhead">Föräldrarnas genomsnittliga utb.nivå:</string>
     <string name="textView_uppnhead">Andel (%) som uppn. kunskapskraven:</string>
-    <string name="textView_gmerihead">G.merivärde:</string>
+    <string name="textView_gmerihead">G.meritvärde:</string>
     <string name="Kommunal">Kommunal</string>
     <string name="Enskild">Enskild</string>
+    <string name="Kommun">Kommun</string>
+    <string name="textView_tyhead">Huvudman</string>
+    <string name="textView_gmhead">G.meritvärde</string>
 
 
 </resources>

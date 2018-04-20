@@ -36,7 +36,7 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecyclerView"
         android:layout_width="372dp"
-        android:layout_height="390dp"
+        android:layout_height="413dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="165dp"
@@ -64,7 +64,7 @@
 
     <TextView
         android:id="@+id/textView_sorting"
-        android:layout_width="71dp"
+        android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginEnd="36dp"
         android:layout_marginTop="128dp"
@@ -89,7 +89,7 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="372dp"
-        android:layout_height="390dp"
+        android:layout_height="413dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="165dp"

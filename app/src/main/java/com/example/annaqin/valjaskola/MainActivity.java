@@ -1,6 +1,7 @@
 package com.example.annaqin.valjaskola;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -367,23 +368,23 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
                 mMap.getUiSettings().setZoomControlsEnabled(true);
 
                 // For showing a move to my location button
-                if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
-                        == PackageManager.PERMISSION_GRANTED) {
-                    mMap.setMyLocationEnabled(true);
+                if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(getApplicationContext(), "Request permission.", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Request permission.", Toast.LENGTH_SHORT).show();
+                    mMap.setMyLocationEnabled(true);
+                    // For dropping markers at the points on the Map
+                    for (Skola skola : listskolor) {
+                        LatLng sLocation = new LatLng(skola.getLatitude(), skola.getLongitude());
+                        mMap.addMarker(new MarkerOptions().position(sLocation).title(skola.getName()).snippet(skola.getAdress()));
+
+                    }
+
+                    // For zooming automatically to the location of the marker
+                    locationManager=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
+                    getMyLocation();
                 }
 
-                // For dropping markers at the points on the Map
-                for (Skola skola : listskolor) {
-                    LatLng sLocation = new LatLng(skola.getLatitude(), skola.getLongitude());
-                    mMap.addMarker(new MarkerOptions().position(sLocation).title(skola.getName()).snippet(skola.getAdress()));
-
-                }
-
-                // For zooming automatically to the location of the marker
-                locationManager=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
-                getMyLocation();
 
             }
 
