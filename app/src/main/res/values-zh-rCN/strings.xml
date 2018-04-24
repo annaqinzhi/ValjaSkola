@@ -42,5 +42,6 @@
     <string name="Kommun">所辖区</string>
     <string name="textView_tyhead">管理机制</string>
     <string name="textView_gmhead">平均分</string>
+    <string name="textView_favorit">喜欢</string>
 
 </resources>

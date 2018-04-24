@@ -40,7 +40,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>  {
     public void onBindViewHolder(ListAdapter.ViewHolder holder, int position) {
         Skola skola=skolaList.get(position);
         holder.textViewName.setText(skola.getName());
-        holder.textViewKummun.setText(skola.getKummun());
+        holder.textViewKummun.setText(skola.getKommun());
         holder.textViewGmeriv.setText(Double.toString(skola.getGmeriv()));
 
         if (skola.getType().equals("Kommunal")){

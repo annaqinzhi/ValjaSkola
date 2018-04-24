@@ -42,5 +42,6 @@
     <string name="Kommun">Municipality</string>
     <string name="textView_tyhead">Type</string>
     <string name="textView_gmhead">AVG.Score</string>
+    <string name="textView_favorit">Favorite</string>
 
 </resources>

@@ -8,6 +8,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -216,7 +217,7 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
 
                 for (DataSnapshot skolaSnapshot : dataSnapshot.getChildren()) {
                     Skola skola = skolaSnapshot.getValue(Skola.class);
-                    String komInDBS=(String) skolaSnapshot.child("kummun").getValue();
+                    String komInDBS=(String) skolaSnapshot.child("kommun").getValue();
                     String lanInDBS=(String) skolaSnapshot.child("lan").getValue();
 
                     if(lanInDBS.contains(seletedItem1)){
@@ -268,7 +269,7 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
 
                 for (DataSnapshot skolaSnapshot : dataSnapshot.getChildren()) {
                     Skola skola = skolaSnapshot.getValue(Skola.class);
-                    String komInDBS=(String) skolaSnapshot.child("kummun").getValue();
+                    String komInDBS=(String) skolaSnapshot.child("kommun").getValue();
                     String lanInDBS=(String) skolaSnapshot.child("lan").getValue();
 
                     if(seletedItem1.contains(getString(R.string.spinner_lanAlla))&& seletedItem2.contains(getString(R.string.spinner_kommunAlla))){
@@ -363,28 +364,38 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
         mapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
+
                 mMap = googleMap;
                 mMap.getUiSettings().isMapToolbarEnabled();
                 mMap.getUiSettings().setZoomControlsEnabled(true);
 
+
                 // For showing a move to my location button
                 if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
-                        != PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(getApplicationContext(), "Request permission.", Toast.LENGTH_LONG).show();
-                } else {
+                        == PackageManager.PERMISSION_GRANTED) {
                     mMap.setMyLocationEnabled(true);
+
                     // For dropping markers at the points on the Map
                     for (Skola skola : listskolor) {
                         LatLng sLocation = new LatLng(skola.getLatitude(), skola.getLongitude());
                         mMap.addMarker(new MarkerOptions().position(sLocation).title(skola.getName()).snippet(skola.getAdress()));
-
                     }
 
-                    // For zooming automatically to the location of the marker
-                    locationManager=(LocationManager)getSystemService(Context.LOCATION_SERVICE);
-                    getMyLocation();
-                }
+                    // For zooming automatically to my location(accurate fix permission)
+                    LocationManager manager = (LocationManager)getSystemService(Context.LOCATION_SERVICE);
+                    Criteria criteria = new Criteria();
+                    criteria.setAccuracy(Criteria.ACCURACY_FINE);
+                    String provider = manager.getBestProvider(criteria, false);
+                    Location myLocation = manager.getLastKnownLocation(provider);
+                    //altanativ: Location myLocation=locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                    LatLng mLocation = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
 
+                    CameraPosition cameraPosition = new CameraPosition.Builder().target(mLocation).zoom(10).build();
+                    mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+
+                } else {
+                    Toast.makeText(getApplicationContext(), "Request permission.", Toast.LENGTH_LONG).show();
+                }
 
             }
 
@@ -404,22 +415,6 @@ public class MainActivity extends FragmentActivity implements ListAdapter.OnItem
             Toast.makeText(getApplicationContext(), "MapFragment not found", Toast.LENGTH_SHORT).show();
         }
     }
-
-    public void getMyLocation(){
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED) {
-
-            Location myLocation=locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-            LatLng mLocation = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
-            CameraPosition cameraPosition = new CameraPosition.Builder().target(mLocation).zoom(10).build();
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
-
-        } else {
-            Toast.makeText(getApplicationContext(), "Request permission.", Toast.LENGTH_SHORT).show();
-        }
-    }
-
 
 }
 

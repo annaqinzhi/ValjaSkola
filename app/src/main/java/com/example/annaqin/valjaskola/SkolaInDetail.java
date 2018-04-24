@@ -11,6 +11,9 @@ import android.net.Uri;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,12 +50,12 @@ public class SkolaInDetail extends AppCompatActivity {
         manager = getFragmentManager();
 
         final String name=intent.getStringExtra(Extra_Name);
-        String type=intent.getStringExtra(Extra_Type);
-        String gmeriv=intent.getStringExtra(Extra_Gmeriv);
+        final String type=intent.getStringExtra(Extra_Type);
+        final String gmeriv=intent.getStringExtra(Extra_Gmeriv);
         final String adress=intent.getStringExtra(Extra_Adress);
-        String tel=intent.getStringExtra(Extra_Tel);
-        String utbil=intent.getStringExtra(Extra_Utbil);
-        String uppn=intent.getStringExtra(Extra_Uppn);
+        final String tel=intent.getStringExtra(Extra_Tel);
+        final String utbil=intent.getStringExtra(Extra_Utbil);
+        final String uppn=intent.getStringExtra(Extra_Uppn);
         final String lat=intent.getStringExtra(Extra_Lat);
         final String lng=intent.getStringExtra(Extra_Lng);
 
@@ -63,6 +66,7 @@ public class SkolaInDetail extends AppCompatActivity {
         TextView textViewTel=(TextView)findViewById(R.id.textView_SkolaTel);
         TextView textViewUtbil=(TextView)findViewById(R.id.textView_Utbildning);
         TextView textViewUppn=(TextView)findViewById(R.id.textView_Uppn);
+
 
         if (type.equals("Kommunal")){
             textViewType.setText(R.string.Kommunal);
@@ -113,7 +117,11 @@ public class SkolaInDetail extends AppCompatActivity {
             }
         });
 
+
+
+
+
     }
 
+    }
 
-}

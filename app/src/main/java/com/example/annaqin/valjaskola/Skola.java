@@ -3,7 +3,7 @@ package com.example.annaqin.valjaskola;
 public class Skola implements Comparable<Skola> {
 
     private String name;
-    private String kummun;
+    private String kommun;
     private String type;
     private double gmeriv;
     private String adress;
@@ -17,9 +17,9 @@ public class Skola implements Comparable<Skola> {
     public Skola() {
     }
 
-    public Skola(String name, String kummun, String type, double gmeriv, String adress, String tel, String utbil, String uppn, double latitude, double longitude) {
+    public Skola(String name, String kommun, String type, double gmeriv, String adress, String tel, String utbil, String uppn, double latitude, double longitude) {
         this.name = name;
-        this.kummun = kummun;
+        this.kommun = kommun;
         this.type = type;
         this.gmeriv = gmeriv;
         this.adress = adress;
@@ -30,6 +30,7 @@ public class Skola implements Comparable<Skola> {
         this.longitude = longitude;
     }
 
+
     public String getName() {
         return name;
     }
@@ -38,12 +39,12 @@ public class Skola implements Comparable<Skola> {
         this.name = name;
     }
 
-    public String getKummun() {
-        return kummun;
+    public String getKommun() {
+        return kommun;
     }
 
-    public void setKummun(String kummun) {
-        this.kummun = kummun;
+    public void setKommun(String kommun) {
+        this.kommun = kommun;
     }
 
     public String getType() {

@@ -50,9 +50,9 @@
 
     <TextView
         android:id="@+id/textView_visa"
-        android:layout_width="95dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="132dp"
+        android:layout_width="89dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="136dp"
         android:layout_marginTop="128dp"
         android:background="#f1f5e6"
         android:gravity="center"
@@ -64,9 +64,9 @@
 
     <TextView
         android:id="@+id/textView_sorting"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="69dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
         android:layout_marginTop="128dp"
         android:gravity="center"
         android:text="@string/textView_sorting"
@@ -78,7 +78,7 @@
         android:id="@+id/textView_toMap"
         android:layout_width="70dp"
         android:layout_height="30dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="128dp"
         android:gravity="center"
         android:text="@string/textView_toMap"
